@@ -26,6 +26,8 @@
 #define MQTT_TOPIC_ROOT    "casa/baterias/"  //this is where mqtt data will be pushed
 #define MQTT_PUSH_FREQ_SEC 5  //maximum mqtt update frequency in seconds
 
+#define MAX_PYLON_BATTERIES 10
+
 #include <PubSubClient.h>
 WiFiClient espClient;
 PubSubClient mqttClient(espClient);
@@ -343,8 +345,6 @@ void wakeUpConsole()
     }
   }
 }
-
-#define MAX_PYLON_BATTERIES 10
 
 struct pylonBattery
 {
